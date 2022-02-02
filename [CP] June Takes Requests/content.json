@@ -1,0 +1,151 @@
+{
+  "Format": "1.24.0",
+
+  "ConfigSchema": {
+    "JuneMusic": {
+      "AllowValues": "on, off",
+      "Default": "on",
+      "Description": "Whether June plays music in the lobby"
+    }
+  },
+
+  "DynamicTokens": [
+    {
+      "Name": "RANDOMMUSIC",
+      "Value": "{{Random:Song1, Song2, Song3, Song4, Song5}}"
+    },
+
+  "Changes": [
+    {
+      "LogName": "June takes requests - Th Fr Sa evening",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby",
+      "MapProperties": {
+        "Music": "{{RANDOMMUSIC}}"
+        },
+      "When": {
+        "JuneMusic": "on",
+        "Season": "fall, winter",
+        "DayOfWeek": "Thursday, Friday, Saturday",
+        "Time": "{{Range: 1710, 2050}}",
+        "Spouse |contains=June": false
+        },
+      "Update": "OnTimeChange"
+    },
+    {
+      "LogName": "June takes requests - Sa Su afternoon",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby",
+      "MapProperties": {
+        "Music": "{{RANDOMMUSIC}}"
+        },
+      "When": {
+        "JuneMusic": "on",
+        "Season": "fall, winter",
+        "DayOfWeek": "Saturday, Sunday",
+        "Time": "{{Range: 1210, 1450}}",
+        "Spouse |contains=June": false
+        },
+      "Update": "OnTimeChange"
+    },
+    {
+      "LogName": "June takes requests - married Th Fr Sa",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby",
+      "MapProperties": {
+        "Music": "{{RANDOMMUSIC}}"
+        },
+      "When": {
+        "JuneMusic": "on",
+        "DayOfWeek": "Thursday, Friday, Saturday",
+        "Weather": "Sun, Wind, Snow",
+        "Time": "{{Range: 1210, 1750}}",
+        "Spouse": "June"
+        },
+      "Update": "OnTimeChange"
+    },
+    {
+      "LogName": "June takes requests - married Su",
+      "Action": "EditMap",
+      "Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby",
+      "MapProperties": {
+        "Music": "{{RANDOMMUSIC}}"
+        },
+      "When": {
+        "JuneMusic": "on",
+        "DayOfWeek": "Sunday",
+        "Weather": "Sun, Wind, Snow",
+        "Time": "{{RANDOMMUSIC}}",
+        "Spouse": "June"
+        },
+      "Update": "OnTimeChange"
+    },
+
+    // Stop music after June is done playing
+		{
+			"LogName": "June done playing - Th Fr Sa evening",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby, Maps/Custom_Ridgeside_LogCabinHotel2ndFloor, Maps/Custom_Ridgeside_RidgesideVillage",
+			"MapProperties": {
+				"Music": "none"
+				},
+			"When": {
+        "JuneMusic": "on",
+				"Season": "fall, winter",
+				"DayOfWeek": "Thursday, Friday, Saturday",
+				"Time": "{{Range: 2100, 2300}}",
+				"Spouse |contains=June": false
+				},
+			"Update": "OnTimeChange"
+		},
+		{
+			"LogName": "June done playing - Sa Su afternoon",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby, Maps/Custom_Ridgeside_LogCabinHotel2ndFloor, Maps/Custom_Ridgeside_RidgesideVillage",
+			"MapProperties": {
+				"Music": "none"
+				},
+			"When": {
+        "JuneMusic": "on",
+				"Season": "fall, winter",
+				"DayOfWeek": "Saturday, Sunday",
+				"Time": "{{Range: 1500, 1700}}",
+				"Spouse |contains=June": false
+				},
+			"Update": "OnTimeChange"
+		},
+		{
+			"LogName": "June done playing - married Th Fr Sa",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby, Maps/Custom_Ridgeside_LogCabinHotel2ndFloor, Maps/Custom_Ridgeside_RidgesideVillage",
+			"MapProperties": {
+				"Music": "none"
+				},
+			"When": {
+        "JuneMusic": "on",
+				"DayOfWeek": "Thursday, Friday, Saturday",
+				"Weather": "Sun, Wind, Snow",
+				"Time": "{{Range: 1800, 2000}}",
+				"Spouse": "June"
+				},
+			"Update": "OnTimeChange"
+		},
+		{
+			"LogName": "June done playing - married Su",
+			"Action": "EditMap",
+			"Target": "Maps/Custom_Ridgeside_LogCabinHotelLobby, Maps/Custom_Ridgeside_LogCabinHotel2ndFloor, Maps/Custom_Ridgeside_RidgesideVillage",
+			"MapProperties": {
+				"Music": "none"
+				},
+			"When": {
+        "JuneMusic": "on",
+				"DayOfWeek": "Sunday",
+				"Weather": "Sun, Wind, Snow",
+				"Time": "{{Range: 1500, 1700}}",
+				"Spouse": "June"
+				},
+			"Update": "OnTimeChange"
+		},
+
+  ]
+}

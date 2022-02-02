@@ -1,0 +1,47 @@
+﻿[
+    {
+      "Id": "Song1",
+			"Filepath": "Audio/Song1.ogg",
+			"Category": "Music",
+			"Settings": {
+				"Loop": true,
+				"AddToJukebox": false
+			}
+		},
+    {
+      "Id": "Song2",
+			"Filepath": "Audio/Song2.ogg",
+			"Category": "Music",
+			"Settings": {
+				"Loop": true,
+				"AddToJukebox": false
+			}
+		},
+    {
+      "Id": "Song3",
+			"Filepath": "Audio/Song3.ogg",
+			"Category": "Music",
+			"Settings": {
+				"Loop": true,
+				"AddToJukebox": false
+			}
+		},
+    {
+      "Id": "Song4",
+			"Filepath": "Audio/Song4.ogg",
+			"Category": "Music",
+			"Settings": {
+				"Loop": true,
+				"AddToJukebox": false
+			}
+		},
+    {
+      "Id": "Song5",
+			"Filepath": "Audio/Song5.ogg",
+			"Category": "Music",
+			"Settings": {
+				"Loop": true,
+				"AddToJukebox": false
+			}
+		},
+]

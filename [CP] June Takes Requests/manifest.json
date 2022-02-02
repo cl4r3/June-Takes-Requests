@@ -1,0 +1,18 @@
+{
+  "Name": "June Takes Requests (for June NPC no music version)",
+  "Author": "ch20youk",
+  "Description": "Add-on for June NPC (no music) to put user-selected music in.",
+  "Version": "1.1.3",
+  "UniqueID": "ch20youk.JuneTakesRequests",
+  "UpdateKeys": [ "Nexus:10100" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "ch20youk.JuneNPC",
+      "IsRequired": true,
+      "MinimumVersion": "1.1.3"
+    }
+  ]
+}
